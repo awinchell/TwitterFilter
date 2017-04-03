@@ -1,3 +1,7 @@
+# Run the main program
+
+python linsvm.py
+
 # Tweet Sampler program
 
 python tweetSampler.py [output-file]
