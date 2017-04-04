@@ -96,9 +96,9 @@ def run_experiment(loss, gradient, eta_values, lambda_values):
 
     #  plt.ylim([1e-20, 1])
 
-    plt.title('Validation Error vs. T Values')
+    plt.title('Training Error vs. T Values')
     plt.xlabel('T Value')
-    plt.ylabel('Validation Error')
+    plt.ylabel('Training Error')
 
     plt.show()
     
