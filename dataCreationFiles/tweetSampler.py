@@ -19,7 +19,7 @@ oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 
 twitter_stream = TwitterStream(auth=oauth)
 
-iterator = twitter_stream.statuses.filter(track='suicide, depressed, kil', language='en')
+iterator = twitter_stream.statuses.filter(track='suicide, depressed', language='en')
 
 tweet_count = 300
 for tweet in iterator:

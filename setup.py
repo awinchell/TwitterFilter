@@ -35,6 +35,9 @@ def run():
         bigramList = pickle.load(open('cache/bigramList.p', 'rb'))
         unigramList = pickle.load(open('cache/unigramList.p', 'rb'))
 
+        print trainingDataMatrix.shape
+        print testDataMatrix.shape
+
     else:
 
         print('Creating label matrix strings...')
