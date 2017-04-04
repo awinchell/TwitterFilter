@@ -2,7 +2,7 @@ import numpy as np
 import os
 import os.path
 import pickle
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 import setup as s 
 
@@ -55,7 +55,7 @@ def run_experiment(loss, gradient, eta_values, lambda_values):
                 lowest_err = v_err
             '''
             if tr_err < lowest_err:
-                best_combo = (eta, 1)
+                best_combo = (eta, l)
                 lowest_err = tr_err
 
     best_T = 0 
@@ -91,12 +91,14 @@ def run_experiment(loss, gradient, eta_values, lambda_values):
     print "best eta: " + str(best_eta)
     print "best lambda: " + str(best_lambda)
     print "test error: " + str(test_err(loss, w, l))
-    '''
+    
     plt.plot(T_values, err_values, '-')
+
+    #  plt.ylim([1e-20, 1])
 
     plt.title('Validation Error vs. T Values')
     plt.xlabel('T Value')
     plt.ylabel('Validation Error')
 
     plt.show()
-    '''
+    

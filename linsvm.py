@@ -23,5 +23,8 @@ def gradient(X, Y, w, eta, l, N):
 lambda_values = [.1, .01, .001, .0001, .00001, .000001, .0000001]
 eta_values = [.1, .01, .001, .0001, .00001, .000001, .0000001, .00000001]
 
+#  lambda_values = [.0001]
+#  eta_values = [.0000001]
+
 gd.run_experiment(loss, gradient, eta_values, lambda_values)
 
