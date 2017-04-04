@@ -41,22 +41,22 @@ def run_experiment(loss, gradient, eta_values, lambda_values):
             
             tr_err = train_err(loss, w, l)
             #v_err = val_err(loss, w, l)
-            t_err = test_err(loss, w, l)
+            #t_err = test_err(loss, w, l)
 
             print "eta: " + str(eta)
             print "lambda: " + str(l)
             print "training error: " + str(tr_err)
             #print "validation error: " + str(v_err)
-            print "test error: " + str(t_err)
+            #print "test error: " + str(t_err)
             print
             '''
             if v_err < lowest_err:
                 best_combo = (eta, l)
                 lowest_err = v_err
             '''
-            if t_err < lowest_err:
+            if tr_err < lowest_err:
                 best_combo = (eta, 1)
-                lowest_err = t_err
+                lowest_err = tr_err
 
     best_T = 0 
     lowest_err = float("inf")
@@ -75,7 +75,8 @@ def run_experiment(loss, gradient, eta_values, lambda_values):
         w = train_increment(gradient, w, best_eta, best_lambda)
         
         #err = val_err(loss, w, l)
-        err = test_err(loss, w, 1)
+        #err = test_err(loss, w, 1)
+        err = train_err(loss, w, l)
 
         err_values.append(err)
 
