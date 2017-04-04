@@ -86,6 +86,11 @@ def run_experiment(loss, gradient, eta_values, lambda_values):
     
 
     w = train(gradient, best_T, best_eta, best_lambda)
+
+    weights_file = open('weights_file.txt', 'w')
+    for weight in w:
+        weights_file.write(str(weight) + '\n')
+    weights_file.close()
     
     print "best T: " + str(best_T)
     print "best eta: " + str(best_eta)
