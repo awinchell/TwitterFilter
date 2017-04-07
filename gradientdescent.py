@@ -22,13 +22,13 @@ def train(gradient, T, eta, l):
     return w
 
 def train_err(loss, w, l):
-    return float(loss(training_X, training_Y, w, l, training_N))
+    return float(loss(training_X, training_Y, w, l, training_N, 0))
 '''
 def val_err(loss, w, l):
     return float(loss(val_X, val_Y, w, l, val_N))
 '''
 def test_err(loss, w, l):
-    return float(loss(test_X, test_Y, w, l, test_N))
+    return float(loss(test_X, test_Y, w, l, test_N, 1))
 
 def run_experiment(loss, gradient, eta_values, lambda_values):
     T = 1000
